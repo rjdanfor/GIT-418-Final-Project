@@ -1,3 +1,6 @@
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Science+Gothic:wght@100..900&display=swap');
+
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -52,13 +55,31 @@ table {
     --blue: cadetblue;
     --white: white;
     --black: black;
+
+    --title-font: "Science Gothic", sans-serif;
+    --body-font: "Open Sans", sans-serif;
 }
 
 /* TEXT STYLES */
-h1{
-    font-size: large;
+h1, h2, a{
+    font-family: var(--title-font);
 }
-
+h1{
+    font-size: larger;
+}
+h2{
+    padding: 1rem;
+}
+a{
+    color: var(--white);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline 2px;
+}
+p{
+    font-family: var(--body-font);
+}
 /* PAGE STYLES */
 header{
     display: flex;
@@ -80,25 +101,26 @@ nav li{
 }
 
 main{
-    display: grid;
-    grid-template-areas: 
-    "over time"
-    "tabs tabs";
+    display: block;
+    width: 80%;
+    margin: auto;
 }
 
+
+
 #overview{
-    grid-area: over;
+    margin: 2rem auto;
+    max-width: 60%;
 }
 
 #typeTime{
-    margin: 0 auto;
+    margin: auto;
     width: 500px;
-    display: block;
-    grid-area: time;
 }
 
-#typeTabs{
-    grid-area: tabs;
+.slickCarousel p{
+    margin: 0.5rem;
+    text-align: center;
 }
 
 footer{
