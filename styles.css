@@ -69,6 +69,8 @@ h1{
 }
 h2{
     padding: 1rem;
+    border-radius: 15%;
+    background-color: brown;
 }
 a{
     color: var(--white);
@@ -106,7 +108,9 @@ main{
     margin: auto;
 }
 
-
+html{
+    background-color: burlywood;
+}
 
 #overview{
     margin: 2rem auto;
