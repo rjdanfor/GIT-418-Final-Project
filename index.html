@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="script.js" defer></script>
-    <script
-        src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous">
-    </script>
-    <script
-        src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"
-        integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI="
-        crossorigin="anonymous">
-    </script>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- JQuery UI -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <!-- Slick Carousel -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <title>GIT 418 Final</title>
 </head>
@@ -25,28 +22,32 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Type through Time</a></li>
+                <li><a href="#typeTime">Type through Time</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="">
+        <section id="typeTime">
             <h2>Type through Time</h2>
-            <div class="jcarousel">
-                <ul>
-                    <!-- make a postman api call
-                     <li>
-                        <img src="" alt="An example of a typewriter keyboard">
-                        <p>Typewriter</p>
-                    </li> 
-                    -->
-                </ul>
+            <div class="slickCarousel">
+                <div>
+                    <img src="" alt="">
+                    <p>Image 1</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <p>Image 2</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <p>Image 3</p>
+                </div>
             </div>    
         </section>
         
     </main>
     <footer>
-
+        <small></small>
     </footer>
 </body>
 </html>
