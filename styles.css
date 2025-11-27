@@ -53,18 +53,59 @@ table {
     --white: white;
     --black: black;
 }
+
+/* TEXT STYLES */
+h1{
+    font-size: large;
+}
+
+/* PAGE STYLES */
 header{
-    display: inline-block;
-    background-color: var(--blue);
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(148, 55, 55, 0.7);
+    color: var(--white);
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+nav li{
+    text-align: center;
+}
+
+main{
+    display: grid;
+    grid-template-areas: 
+    "over time"
+    "tabs tabs";
+}
+
+#overview{
+    grid-area: over;
 }
 
 #typeTime{
     margin: 0 auto;
     width: 500px;
     display: block;
+    grid-area: time;
+}
+
+#typeTabs{
+    grid-area: tabs;
 }
 
 footer{
     display: block;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    margin-top: 2rem;
 }
