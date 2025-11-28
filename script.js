@@ -35,7 +35,7 @@ $(function(){
         console.log(data);
 
         // For each response
-        for (let i = 0; i < 4; i++){
+        for (let i = 0; i < data.items.length; i++){
             // Add data to carousel
             let slickHTML = `
             <div>
