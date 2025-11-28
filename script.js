@@ -34,7 +34,7 @@ $.ajax({
     console.log(data);
 
     // For each response
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 4; i++){
         // Add data to carousel
         let slickHTML = `
         <div>
@@ -54,7 +54,10 @@ $.ajax({
         </div>`;
         $(`#tabs`).append(newTab);
     }
-}).error(function(data){
-    $(`#errorSpan`).innerHTML(data);
-    $(`#dialog`).dialog("open");
 });
+
+
+// .error(function(data){
+//     $(`#errorSpan`).innerHTML(data);
+//     $(`#dialog`).dialog("open");
+// });
