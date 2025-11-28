@@ -21,6 +21,7 @@
     <title>GIT 418 Final</title>
 </head>
 <body>
+    <a href="#main" class="sr-only">Skip to content</a>
     <header>
         <h1>A Brief History of Keyboards</h1>
         <nav>
@@ -41,7 +42,7 @@
         <section id="typeTime">
             <h2>Type through Time</h2>
             <div class="slickCarousel">
-                <div>
+                <!-- <div>
                     <img src="images/typewriter.jpg" alt="" height="500px">
                     <p>Typewriter</p>
                 </div>
@@ -56,32 +57,25 @@
                 <div>
                     <img src="images/membrane.jpg" alt="" height="500px">
                     <p>Membrane</p>
-                </div>
+                </div> -->
             </div>    
         </section>
         
         <section id="typeTabs">
             <div id="tabs">
-                <ul>
-                    <li><a href="#tabs-1">Typewriter</a></li>
-                    <li><a href="#tabs-2">Mechanical</a></li>
-                    <li><a href="#tabs-3">Scissor Switch</a></li>
-                    <li><a href="#tabs-4">Membrane</a></li>
+                <ul id="tabList">
+                    <!-- <li><a href="#tabs-1">Typewriter</a></li> -->
                 </ul>
-                <div id="tabs-1">
-                    <p></p>
-                </div>
-                <div id="tabs-2">
-                    <p></p>
-                </div>
-                <div id="tabs-3">
-                    <p></p>
-                </div>
-                <div id="tabs-4">
-                    <p></p>
-                </div>
+                <!-- <div id="tabs-1"><p></p></div> -->
             </div>
         </section>
+
+        <div id="dialog" title="ERROR" class="hidden">
+            <p>Something went wrong calling the Postman API. Some images and text may not display, or display incorrectly.
+            <br><br>
+            Error: <span id="errorSpan"></span>
+            </p>
+        </div>
     </main>
     <footer>
         <p>Copyright &copy; <span>2022</span> Robert Danforth</p>

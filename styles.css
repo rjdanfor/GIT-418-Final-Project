@@ -59,6 +59,21 @@ table {
     --title-font: "Science Gothic", sans-serif;
     --body-font: "Open Sans", sans-serif;
 }
+/* SR TEXT */
+.sr-only{
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+ 
+.sr-only:focus{
+    position:static;
+    width:auto;
+    height:auto;
+}
 
 /* TEXT STYLES */
 h1, h2, a{
@@ -69,8 +84,10 @@ h1{
 }
 h2{
     padding: 1rem;
-    border-radius: 15%;
+    border-radius: 2rem;
     background-color: brown;
+    width: max-content;
+    margin-bottom: 1rem;
 }
 a{
     color: var(--white);
