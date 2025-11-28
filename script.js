@@ -39,10 +39,11 @@ $(function(){
             // Add data to carousel
             let slickHTML = `
             <div>
-                <img src="${data.items[i].image}" alt="${data.items[i].alt}"></img>
+                <img src="${data.items[i].image}" alt="${data.items[i].alt}" height="500px"></img>
                 <p>${data.items[i].title}</p>
             </div>`;
-            $(`.slickCarousel`).append(slickHTML);
+            // Need to use the slick method to add to carousel
+            $('.slickCarousel').slick('slickAdd', slickHTML);
 
             // Add data to jq tab header
             let addTab = `<li><a href="#tabs-${i+1}">${data.items[i].title}</a></li>`;
@@ -54,6 +55,12 @@ $(function(){
                 <p>${data.items[i].text}</p>
             </div>`;
             $(`#tabs`).append(newTab);
+
+            // Tab refresh
+            $("#tabs").tabs("refresh");
+            $("#tabs").tabs({
+                active: 0
+            });
         }
     }).fail(function(jqXHR){
         console.error(jqXHR.responseJSON.status_message);
