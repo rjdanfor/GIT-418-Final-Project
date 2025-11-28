@@ -1,21 +1,21 @@
 "use strict";
 
-// init
+// on page init
 $(function(){
-    // Copyright year
+    // Copyright year function
     let today = new Date();
 	$("footer span").text(today.getFullYear());
 
-    // Carousel
+    // init Slick Carousel
     $('.slickCarousel').slick({
         autoplay: true,
         dots: true
     });
 
-    // JQuery Tabs
+    // init JQuery Tabs
     $("#tabs").tabs();     
 
-    // JQuery UI Error Dialog Box
+    // init JQuery UI Error Dialog Box
     $(`#dialog`).dialog({
         modal: true,
         buttons: {
@@ -24,12 +24,10 @@ $(function(){
             }
         }
     }).dialog("close");
-});
 
-$(function(){
     $.ajax({
         // API call
-        url: "https://f1801962-bdf1-4774-84b8-3bff6ab79bcc.mock.pstmn.io/showcase",
+        url: "https://f1801962-bdf1-4774-84b8-3bff6ab79bcc.mock.pstmn.io/showcas",
         dataType: "json"
     }).done(function(data){
         console.log(data);
@@ -63,7 +61,17 @@ $(function(){
             });
         }
     }).fail(function(jqXHR){
+        // Send error to console
         console.error(jqXHR.responseJSON.status_message);
+
+        // Send error to screen
         $(`#dialog`).dialog("open");
     });
+
+    // init theme button
+    $(`#themeToggle`).on("click", changeTheme());  
 });
+
+function changeTheme(){
+
+}
