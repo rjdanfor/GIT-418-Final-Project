@@ -55,6 +55,7 @@ table {
     --blue: cadetblue;
     --white: white;
     --black: black;
+    --redish: rgba(148, 55, 55, 0.7);
 
     --title-font: "Science Gothic", sans-serif;
     --body-font: "Open Sans", sans-serif;
@@ -85,9 +86,10 @@ h1{
 h2{
     padding: 1rem;
     border-radius: 2rem;
-    background-color: brown;
+    background-color: var(--redish);
     width: max-content;
     margin-bottom: 1rem;
+    color: var(--white);
 }
 a{
     color: var(--white);
@@ -98,13 +100,14 @@ a:hover{
 }
 p{
     font-family: var(--body-font);
+    line-height: 1.3;
 }
 /* PAGE STYLES */
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(148, 55, 55, 0.7);
+    background-color: var(--redish);
     color: var(--white);
     padding: 1rem;
     margin-bottom: 2rem;
@@ -151,7 +154,4 @@ footer{
     background-color: var(--blue);
     color: var(--white);
     margin-top: 2rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
