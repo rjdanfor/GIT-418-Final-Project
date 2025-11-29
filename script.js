@@ -33,26 +33,25 @@ if(window.matchMedia){
         // If dark mode
         lightTheme = false;
         $("html").css("background-color", "grey");
-        console.log("light theme is " + lightTheme);
+        $(`#overview p, .slickCarousel p`).css("color", "var(--white)");
     };
     if(window.matchMedia('(prefers-color-scheme: light)').matches || localStorage.getItem("theme") == "light"){
         // If light mode
         lightTheme = true;
-        console.log("light theme is " + lightTheme);
     };
 }else{
     // If media queries don't work, default to light mode
     lightTheme = true;
-    console.log("light theme is " + lightTheme);
 }
 
 // if localStorage theme, use theme
 if(localStorage.getItem("theme") == "light"){
     $("html").css("background-color", "burlywood");
+    $(`#overview p, .slickCarousel p`).css("color", "var(--black)");
 }
 if(localStorage.getItem("theme") == "dark"){
     $("html").css("background-color", "grey");
-    lightTheme = false;
+    $(`#overview p, .slickCarousel p`).css("color", "var(--white)");
 }
 
 $(function(){
@@ -104,24 +103,29 @@ $(function(){
             if(localStorage.getItem("theme") === "light"){
             // if theme in storage is light change to dark
                 $("html").css("background-color", "grey");
+                $(`#overview p, .slickCarousel p`).css("color", "var(--white)");
                 // set new localStorage
                 localStorage.setItem("theme", "dark");
             }else{
                 // else change to dark
                 $("html").css("background-color", "burlywood");
+                $(`#overview p, .slickCarousel p`).css("color", "var(--black)");
                 // set new localStorage
                 localStorage.setItem("theme", "light");
+                $(`#overview p, .slickCarousel p`).css("color", "var(--black)");
             }
         }else{
         // if there isn't a local storage theme
             if(lightTheme){
             // if current theme is light change to dark
                 $("html").css("background-color", "grey");
+                $(`#overview p, .slickCarousel p`).css("color", "var(--white)");
                 // set new localStorage
                 localStorage.setItem("theme", "dark");
             }else{
             // if current theme is not light change to light
                 $("html").css("background-color", "burlywood");
+                $(`#overview p, .slickCarousel p`).css("color", "var(--black)");
                 // set ne localStorage
                 localStorage.setItem("theme", "light");
             };
