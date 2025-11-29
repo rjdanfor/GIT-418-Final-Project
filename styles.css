@@ -54,10 +54,10 @@ table {
 
 /* ROOT STYLES */
 *{
-    --blue: cadetblue;
+    --blue: rgba(95, 158, 160, 0.85);
     --white: white;
     --black: black;
-    --redish: rgba(148, 55, 55, 0.7);
+    --redish: rgba(148, 55, 55, 0.85);
 
     --title-font: "Science Gothic", sans-serif;
     --body-font: "Open Sans", sans-serif;
