@@ -55,9 +55,9 @@ table {
 /* ROOT STYLES */
 *{
     --blue: rgba(95, 158, 160, 0.85);
-    --white: white;
-    --black: black;
-    --redish: rgba(148, 55, 55, 0.85);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+    --red: rgba(148, 55, 55, 0.85);
 
     --title-font: "Science Gothic", sans-serif;
     --body-font: "Open Sans", sans-serif;
@@ -89,7 +89,7 @@ h1{
 h2{
     padding: 1rem;
     border-radius: 2rem;
-    background-color: var(--redish);
+    background-color: var(--red);
     width: max-content;
     margin-bottom: 1rem;
     color: var(--white);
@@ -106,12 +106,19 @@ p{
     line-height: 1.3;
 }
 
+footer > p{
+    color: var(--white);
+}
+#tabs > div > p{
+    color: var(--black);
+}
+
 /* PAGE STYLES */
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--redish);
+    background-color: var(--red);
     color: var(--white);
     padding: 1rem;
     margin-bottom: 2rem;
