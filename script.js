@@ -1,21 +1,22 @@
 "use strict";
+var lightTheme = true;
 
-// on page init
+// init
 $(function(){
-    // Copyright year function
+    // Copyright year
     let today = new Date();
 	$("footer span").text(today.getFullYear());
 
-    // init Slick Carousel
+    // Carousel
     $('.slickCarousel').slick({
         autoplay: true,
         dots: true
     });
 
-    // init JQuery Tabs
+    // JQuery Tabs
     $("#tabs").tabs();     
 
-    // init JQuery UI Error Dialog Box
+    // JQuery UI Error Dialog Box
     $(`#dialog`).dialog({
         modal: true,
         buttons: {
@@ -23,11 +24,41 @@ $(function(){
                 $(this).dialog("close");
             }
         }
-    }).dialog("close");
+    }).dialog("close"); // <-- Don't the dialog without an error
+});
 
+// Puts site into correct theme per browser settings
+if(window.matchMedia){
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem("theme") == "dark"){
+        // If dark mode
+        lightTheme = false;
+        $("html").css("background-color", "grey");
+        console.log("light theme is " + lightTheme);
+    };
+    if(window.matchMedia('(prefers-color-scheme: light)').matches || localStorage.getItem("theme") == "light"){
+        // If light mode
+        lightTheme = true;
+        console.log("light theme is " + lightTheme);
+    };
+}else{
+    // If media queries don't work, default to light mode
+    lightTheme = true;
+    console.log("light theme is " + lightTheme);
+}
+
+// if localStorage theme, use theme
+if(localStorage.getItem("theme") == "light"){
+    $("html").css("background-color", "burlywood");
+}
+if(localStorage.getItem("theme") == "dark"){
+    $("html").css("background-color", "grey");
+    lightTheme = false;
+}
+
+$(function(){
     $.ajax({
         // API call
-        url: "https://f1801962-bdf1-4774-84b8-3bff6ab79bcc.mock.pstmn.io/showcas",
+        url: "https://f1801962-bdf1-4774-84b8-3bff6ab79bcc.mock.pstmn.io/showcase",
         dataType: "json"
     }).done(function(data){
         console.log(data);
@@ -56,22 +87,47 @@ $(function(){
 
             // Tab refresh
             $("#tabs").tabs("refresh");
-            $("#tabs").tabs({
-                active: 0
-            });
+
+            // Set active tab
+            $("#tabs").tabs({active: 0});
         }
     }).fail(function(jqXHR){
-        // Send error to console
         console.error(jqXHR.responseJSON.status_message);
-
-        // Send error to screen
         $(`#dialog`).dialog("open");
     });
 
-    // init theme button
-    $(`#themeToggle`).on("click", changeTheme());  
+    // Theme button
+    $("#themeToggle").on("click", function(){
+    // on click event
+        if(localStorage.getItem("theme")){
+        // if theres a localStorage theme
+            if(localStorage.getItem("theme") === "light"){
+            // if theme in storage is light change to dark
+                $("html").css("background-color", "grey");
+                // set new localStorage
+                localStorage.setItem("theme", "dark");
+            }else{
+                // else change to dark
+                $("html").css("background-color", "burlywood");
+                // set new localStorage
+                localStorage.setItem("theme", "light");
+            }
+        }else{
+        // if there isn't a local storage theme
+            if(lightTheme){
+            // if current theme is light change to dark
+                $("html").css("background-color", "grey");
+                // set new localStorage
+                localStorage.setItem("theme", "dark");
+            }else{
+            // if current theme is not light change to light
+                $("html").css("background-color", "burlywood");
+                // set ne localStorage
+                localStorage.setItem("theme", "light");
+            };
+        };
+    });    
 });
 
-function changeTheme(){
 
-}
+
